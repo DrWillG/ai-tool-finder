@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #ffffff;
+  --color-ink-secondary: rgba(255, 255, 255, 0.55);
+  --color-ink-muted: rgba(255, 255, 255, 0.25);
+  --color-surface: #1a0e3e;
+  --color-surface-dark: #130a2e;
+  --color-surface-card: rgba(255, 255, 255, 0.04);
+  --color-surface-card-hover: rgba(255, 255, 255, 0.07);
+  --color-accent: #673de6;
+  --color-accent-light: #8c85ff;
+  --color-accent-soft: rgba(103, 61, 230, 0.15);
+  --color-accent-border: rgba(140, 133, 255, 0.2);
+  --color-success: #00b090;
+  --color-azure: #357df9;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-subtle: rgba(255, 255, 255, 0.04);
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(103, 61, 230, 0.3);
+    color: #fff;
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Star rating */
+.star-filled {
+  color: #f59e0b;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
