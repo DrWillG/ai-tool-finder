@@ -19,7 +19,8 @@ export default function Hero({ onStart }: HeroProps) {
   const logosRef = useRef<HTMLDivElement>(null);
 
   const toolCount = Object.keys(TOOLS).length;
-  const updated = new Date("2026-03-22T12:00:00").toLocaleDateString("en-US", {
+  const categoryCount = new Set(Object.values(TOOLS).map((t) => t.c)).size;
+  const updated = new Date().toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
   });
@@ -149,7 +150,7 @@ export default function Hero({ onStart }: HeroProps) {
               className="text-xl font-bold text-white"
               style={{ letterSpacing: "-0.5px" }}
             >
-              12
+              {categoryCount}
             </div>
             <div className="text-[11px] mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
               Categories
