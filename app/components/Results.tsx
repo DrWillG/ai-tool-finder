@@ -61,7 +61,7 @@ export default function Results({ tools, answers, onReset }: ResultsProps) {
 
   const subjectName = getSubjectName(answers.subject, answers.grade);
   const profileTag = `${subjectName} \u00B7 ${GRADE_LABELS[answers.grade] || answers.grade} \u00B7 ${ECO_LABELS[answers.ecosystem] || answers.ecosystem}`;
-  const dateStr = new Date("2026-03-22T12:00:00").toLocaleDateString("en-US", {
+  const dateStr = new Date().toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",

@@ -439,7 +439,7 @@ export const TOOLS: Record<string, Tool> = {
     sj: ["math", "science", "ela", "general"],
     b: ["district"],
     ec: ["google", "microsoft", "mixed"],
-    eb: {},
+    eb: { google: 3, microsoft: 3 },
     rv: { r: "4.4", s: "G2", q: "Answer grouping changed grading forever. 80% less time." },
   },
   khanmigo: {
